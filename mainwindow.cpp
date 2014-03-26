@@ -4,6 +4,7 @@
 #include "constants.h"
 #include "gamecontroller.h"
 #include "mainwindow.h"
+#include "vld.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -18,6 +19,14 @@ MainWindow::MainWindow(QWidget *parent)
     initSceneBackground();
 
     QTimer::singleShot(0, this, SLOT(adjustViewSize()));
+	connect(game, SIGNAL(deleteFood(QGraphicsItem*&)), this, SLOT(deleteFood(QGraphicsItem*&)));
+}
+
+void MainWindow::deleteFood(QGraphicsItem* food)
+{
+	scene->removeItem(food);
+	delete food;
+	//food = NULL;
 }
 
 MainWindow::~MainWindow()
@@ -33,6 +42,7 @@ void MainWindow::adjustViewSize()
 void MainWindow::initScene()
 {
     scene->setSceneRect(-100, -100, 200, 200);
+//    scene->setSceneRect(0, 0, 200, 200);
 }
 
 void MainWindow::initSceneBackground()

@@ -5,6 +5,7 @@
 #include <QTimer>
 
 class QGraphicsScene;
+class QGraphicsItem;
 class QKeyEvent;
 
 class Snake;
@@ -18,7 +19,7 @@ public:
     GameController(QGraphicsScene &scene, QObject *parent = 0);
     ~GameController();
 
-    void snakeAteFood(Snake *snake, Food *food);
+    void snakeAteFood(Snake *snake, Food* food);
     void snakeHitWall(Snake *snake, Wall *wall);
     void snakeAteItself(Snake *snake);
 
@@ -36,8 +37,10 @@ private:
 
     QTimer timer;
     QGraphicsScene &scene;
-
     Snake *snake;
+signals:
+	void deleteFood(QGraphicsItem*);
+
 };
 
 #endif // GAMECONTROLLER_H

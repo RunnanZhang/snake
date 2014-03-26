@@ -5,6 +5,7 @@
 
 class QGraphicsScene;
 class QGraphicsView;
+class QGraphicsItem;
 
 class GameController;
 
@@ -17,6 +18,7 @@ public:
 
 private slots:
     void adjustViewSize();
+	void deleteFood(QGraphicsItem*);
 
 private:
     void initScene();

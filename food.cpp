@@ -10,7 +10,10 @@ Food::Food(qreal x, qreal y)
     setPos(x, y);
     setData(GD_Type, GO_Food);
 }
+Food::~Food()
+{
 
+}
 QRectF Food::boundingRect() const
 {
     return QRectF(-TILE_SIZE,    -TILE_SIZE,

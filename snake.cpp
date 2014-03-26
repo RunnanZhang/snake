@@ -9,7 +9,7 @@ static const qreal SNAKE_SIZE = 10;
 Snake::Snake(GameController &controller) :
     head(0, 0),
     growing(7),
-    speed(3),
+    speed(5),
     moveDirection(NoMove),
     controller(controller)
 {
@@ -147,7 +147,7 @@ void Snake::handleCollisions()
     foreach (QGraphicsItem *collidingItem, collisions) {
         if (collidingItem->data(GD_Type) == GO_Food) {
             // Let GameController handle the event by putting another apple
-            controller.snakeAteFood(this, (Food *)collidingItem);
+            controller.snakeAteFood(this, (Food*)collidingItem);
             growing += 1;
         }
     }

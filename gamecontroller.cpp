@@ -1,7 +1,7 @@
 #include <QEvent>
 #include <QGraphicsScene>
+#include <QSharedPointer>
 #include <QKeyEvent>
-
 #include "gamecontroller.h"
 #include "food.h"
 #include "snake.h"
@@ -13,9 +13,8 @@ GameController::GameController(QGraphicsScene &scene, QObject *parent) :
 {
     timer.start( 1000/33 );
 
-    Food *a1 = new Food(0, -50);
+    Food* a1 = new Food(0, -50);
     scene.addItem(a1);
-
     scene.addItem(snake);
     scene.installEventFilter(this);
 
@@ -26,11 +25,11 @@ GameController::~GameController()
 {
 }
 
-void GameController::snakeAteFood(Snake *snake, Food *food)
+void GameController::snakeAteFood(Snake *snake, Food* food)
 {
-    scene.removeItem(food);
-    delete food;
-
+    /*scene.removeItem(food);
+    delete food;*/
+	emit deleteFood(food);
     addNewFood();
 }
 
