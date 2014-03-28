@@ -24,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::deleteFood(QGraphicsItem* food)
 {
+	//QList<QGraphicsItem*> list = scene->items();
 	scene->removeItem(food);
 	delete food;
 	//food = NULL;
