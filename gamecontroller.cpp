@@ -27,7 +27,7 @@ GameController::~GameController()
 
 void GameController::snakeAteFood(Snake *snake, Food* food)
 {
-    /*scene.removeItem(food);
+   /* scene.removeItem(food);
     delete food;*/
 	emit deleteFood(food);
     addNewFood();

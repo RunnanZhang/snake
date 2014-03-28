@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     initSceneBackground();
 
     QTimer::singleShot(0, this, SLOT(adjustViewSize()));
-	connect(game, SIGNAL(deleteFood(QGraphicsItem*&)), this, SLOT(deleteFood(QGraphicsItem*&)));
+	connect(game, SIGNAL(deleteFood(QGraphicsItem*)), this, SLOT(deleteFood(QGraphicsItem*)));
 }
 
 void MainWindow::deleteFood(QGraphicsItem* food)
