@@ -4,7 +4,8 @@
 #include "constants.h"
 #include "gamecontroller.h"
 #include "mainwindow.h"
-#include "vld.h"
+#include "food.h"
+//#include "vld.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -26,7 +27,7 @@ void MainWindow::deleteFood(QGraphicsItem* food)
 {
 	//QList<QGraphicsItem*> list = scene->items();
 	scene->removeItem(food);
-	delete food;
+    //delete food;
 	//food = NULL;
 }
 

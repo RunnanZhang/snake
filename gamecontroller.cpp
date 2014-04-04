@@ -29,7 +29,7 @@ void GameController::snakeAteFood(Snake *snake, Food* food)
 {
 	/*QList<QGraphicsItem*> list = scene.items();
     scene.removeItem(food);
-    delete food;*/
+	delete food;*/
 	emit deleteFood(food);
     addNewFood();
 }

@@ -101,6 +101,8 @@ void Snake::advance(int step)
         case MoveDown:
             moveDown();
             break;
+    default:
+        break;
     }
 
     setPos(head);
